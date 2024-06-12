@@ -54,18 +54,9 @@ jobs:
           password: ${{ secrets.SPL_COM_PASSWORD }}
           app_path: app-dir/
 
-      - name: Get current timestamp
-        id: timestamp
-        run: echo "timestamp=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
-
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: appinspect-api-html-report-${{ env.timestamp }}
+          name: appinspect-api-html-report
           path: AppInspect_response.html
       
-      - name: Upload package
-        uses: actions/upload-artifact@v4
-        with:
-          name: my-package
-          path: app-dir/
