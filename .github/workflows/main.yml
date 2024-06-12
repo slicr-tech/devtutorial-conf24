@@ -57,7 +57,7 @@ jobs:
         if: always()
         with:
           name: appinspect-api-html-report
-          path: AppInspect_response.html
+          path: AppInspect_response_2.html
 
       
       - name: Upload package
