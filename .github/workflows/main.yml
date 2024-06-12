@@ -31,6 +31,13 @@ jobs:
       - name: Create package
         run: ucc-gen package --path output/devtutorial_conf24 -o app-dir/
 
+      - name: Upload package
+        uses: actions/upload-artifact@v4
+        with:
+          name: my-package
+          path: app-dir/
+
+
   run-appinspect-api:
     needs: build
     runs-on: ubuntu-latest
